@@ -85,18 +85,16 @@ function onUpdateTask(event) {
   }
 
   const indexEl = event.target.dataset.id;
-  console.log(indexEl)
-  
+  console.log(indexEl);
+
   tasks.map((el) => {
-    if (el.data-id === indexEl) {
+    console.log(el.dataset);
+    if (el.dataset.id === indexEl) {
       el.done = !done;
     }
   });
 
-  
-  renderTasks(tasks);
+ renderTasks(tasks)
 }
 
-
 listElem.addEventListener('click', onUpdateTask);
-
