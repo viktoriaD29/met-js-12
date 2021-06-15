@@ -96,3 +96,4 @@ function onUpdateTask(event) {
 }
 
 listElem.addEventListener('click', onUpdateTask);
+listElem.removeEventListener('click', onUpdateTask);
