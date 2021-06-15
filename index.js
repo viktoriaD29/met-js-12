@@ -80,20 +80,23 @@ createBtnEl.addEventListener('click', onCreateTask);
 
 function onUpdateTask(event) {
   //перевірка, що клікнули саме на чекбокс
-  if (event.target.classList.contains('list__item-checkbox')) {
+  if (!event.target.classList.contains('list__item-checkbox')) {
     return;
   }
 
-  const index = event.target.dataset.id;
-  console.log(index);
-  console.log(tasks[index]);
+  const indexEl = event.target.dataset.id;
+  console.log(indexEl)
+  
   tasks.map((el) => {
-    if (el.id === index) {
-      el.id = !index;
+    if (el.data-id === indexEl) {
+      el.done = !done;
     }
   });
+
+  
   renderTasks(tasks);
 }
+
 
 listElem.addEventListener('click', onUpdateTask);
 
