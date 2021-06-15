@@ -88,11 +88,10 @@ function onUpdateTask(event) {
   const indexEl = event.target.dataset.id;
   console.log(indexEl);
   //таска по індексу
+  console.log(tasks[indexEl])
   console.log(tasks[indexEl].done);
 
-  if ((tasks[indexEl].done = false)) {
-    tasks[indexEl].done = true;
-  }
+  tasks[indexEl].done = !tasks[indexEl].done;
 
   renderTasks(tasks);
 }
