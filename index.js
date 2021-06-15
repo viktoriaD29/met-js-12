@@ -80,7 +80,7 @@ createBtnEl.addEventListener('click', onCreateTask);
 
 function onUpdateTask(event) {
   //перевірка, що клікнули саме на чекбокс
-  if (!event.target.classList.contains('list__item-checkbox')) {
+  if (event.target.classList.contains('list__item-checkbox')) {
     return;
   }
 
@@ -96,4 +96,4 @@ function onUpdateTask(event) {
 }
 
 listElem.addEventListener('click', onUpdateTask);
-listElem.removeEventListener('click', onUpdateTask);
+
