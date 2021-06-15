@@ -66,7 +66,7 @@ function onCreateTask(event) {
   if (textInput === '') {
     return;
   }
-  tasks.push({ text: textInput, done: false, id: Math.random() });
+  tasks.push({ text: textInput, done: false });
   renderTasks(tasks);
 }
 
@@ -83,18 +83,16 @@ function onUpdateTask(event) {
   if (!event.target.classList.contains('list__item-checkbox')) {
     return;
   }
-
   const indexEl = event.target.dataset.id;
-  console.log(indexEl);
 
-  tasks.map((el) => {
-    console.log(el.dataset);
+  tasks.map(el => {
+    console.log(el)
     if (el.dataset.id === indexEl) {
-      el.done = !done;
+      el.done = !el.done
     }
-  });
+  })
 
- renderTasks(tasks)
+  renderTasks(tasks);
 }
 
 listElem.addEventListener('click', onUpdateTask);
