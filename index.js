@@ -83,14 +83,16 @@ function onUpdateTask(event) {
   if (!event.target.classList.contains('list__item-checkbox')) {
     return;
   }
-  const indexEl = event.target.dataset.id;
+  console.dir(event.target);
 
-  tasks.map(el => {
-    console.log(el)
-    if (el.dataset.id === indexEl) {
-      el.done = !el.done
-    }
-  })
+  const indexEl = event.target.dataset.id;
+  console.log(indexEl);
+  //таска по індексу
+  console.log(tasks[indexEl].done);
+
+  if ((tasks[indexEl].done = false)) {
+    tasks[indexEl].done = true;
+  }
 
   renderTasks(tasks);
 }
